@@ -1,0 +1,270 @@
+/* styles.css */
+
+/* Importation de la police Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+  --primary-color: #ff5a5f;
+  --secondary-color: #333;
+  --background-color: #f5f5f5;
+  --text-color: #333;
+  --font-family: 'Roboto', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-weight: 700;
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+}
+
+#search-form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#search-input {
+  width: 60%;
+  padding: 15px;
+  border: 2px solid var(--primary-color);
+  border-right: none;
+  border-radius: 5px 0 0 5px;
+  font-size: 16px;
+}
+
+#search-input:focus {
+  outline: none;
+}
+
+#search-form button {
+  padding: 15px;
+  border: 2px solid var(--primary-color);
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+#search-form button:hover {
+  background-color: #e04e4e;
+}
+
+/* Styles pour les filtres avancés */
+#advanced-filters {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+#advanced-filters select {
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#show-favorites {
+  display: block;
+  margin: 0 auto 30px auto;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#show-favorites:hover {
+  background-color: #e04e4e;
+}
+
+#results {
+  display: flex;
+  flex-wrap: wrap; /* Permet l'affichage en grille */
+  justify-content: center;
+  gap: 20px; /* Espace entre les cartes */
+  padding: 20px;
+}
+
+/* Styles pour la carte du véhicule */
+.car-card {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 300px; /* Largeur fixe pour une disposition en grille */
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.car-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+}
+
+.car-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: var(--secondary-color);
+}
+
+.car-card p {
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.car-card img {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.favorite-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+.favorite-btn.favorited {
+  color: red;
+}
+
+.car-image {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+/* Styles pour la modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Assure que la modal est au-dessus de tout */
+}
+
+.modal-content {
+  position: relative;
+}
+
+.modal-image {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 5px;
+}
+
+.close-button {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+}
+
+#pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+#pagination button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin: 0 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+#pagination button:hover:not(:disabled) {
+  background-color: #0056b3; /* Couleur plus foncée au survol */
+}
+
+#page-info {
+  margin: 0 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+footer {
+  background-color: var(--secondary-color);
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+@media screen and (max-width: 768px) {
+  #search-input {
+    width: 80%;
+  }
+  #advanced-filters {
+    flex-direction: column;
+    align-items: center;
+  }
+  #advanced-filters select {
+    width: 80%;
+  }
+  .car-card {
+    width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .car-card {
+    width: 90%;
+  }
+}

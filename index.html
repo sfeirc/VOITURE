@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recherche de Voitures</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Importation de Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <h1>Recherche de Voitures</h1>
+  </header>
+
+  <main>
+    <form id="search-form">
+      <input type="text" id="search-input" placeholder="Rechercher une marque, un modèle, un type..." autocomplete="off">
+      <button type="submit">🔍</button>
+    </form>
+
+    <!-- Filtres Avancés -->
+    <div id="advanced-filters">
+      <select id="year-filter">
+        <option value="">Toutes les années</option>
+        <!-- Les options seront générées dynamiquement -->
+      </select>
+
+      <select id="fuel-filter">
+        <option value="">Tous les carburants</option>
+        <option value="Gasoline">Essence</option>
+        <option value="Diesel">Diesel</option>
+        <option value="Electric">Électrique</option>
+        <option value="Hybrid">Hybride</option>
+        <!-- Ajoutez d'autres options si nécessaire -->
+      </select>
+
+      <select id="transmission-filter">
+        <option value="">Toutes les transmissions</option>
+        <option value="Automatic">Automatique</option>
+        <option value="Manual">Manuelle</option>
+        <!-- Ajoutez d'autres options si nécessaire -->
+      </select>
+    </div>
+
+    <!-- Bouton pour afficher les favoris -->
+    <button id="show-favorites">Afficher les Favoris ❤️</button>
+
+    <div id="results"></div>
+
+    <!-- Pagination -->
+    <div id="pagination">
+      <button id="prev-page">Précédent</button>
+      <span id="page-info">Page 1</span>
+      <button id="next-page">Suivant</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 - Votre Nom ou Entreprise</p>
+  </footer>
+
+  <!-- Importation de jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" src="http://www.carqueryapi.com/js/jquery.min.js"></script>
+  <script type="text/javascript" src="http://www.carqueryapi.com/js/carquery.0.3.4.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
